@@ -15,3 +15,35 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+/*//REMEMBER TO RUN BUILD TASK, press CNTRL + SHIFT + B
+//first we have to set up the connection to the API and be able to play around with it
+//second create a simple loop for finding a pokemon, or a specific type, or anything really in order to use it as a basis for the rest of the code that I am going to have to create
+
+//fetches all the names in the pokemon api and stores them in an array
+async function getAllPokemonNames(): Promise<string[]> {
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');
+    const data = await response.json();
+    const names = data.results.map((pokemon: { name: string }) => pokemon.name);
+    return names;
+}
+
+//basic randomizer
+function getRandomInt(max: number) {
+    return Math.floor(Math.random() * max);
+  }
+
+
+
+
+async function chooseRandomPokemon() {
+    const pokemonNames = await getAllPokemonNames();
+    const randomPokemonIndex = getRandomInt(pokemonNames.length)
+    const randomPokemon = pokemonNames[randomPokemonIndex]
+    return randomPokemon
+}
+
+(async ( )=>{
+const randomPokemon = await chooseRandomPokemon()
+console.log(randomPokemon)
+})();*/
